@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_material_dark">
+
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </fragment>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/multiple_actions"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        fab:fab_addButtonColorNormal="#00bcd4"
+        fab:fab_addButtonColorPressed="#e0f7fa"
+        fab:fab_addButtonPlusIconColor="#ff414141"
+        fab:fab_labelStyle="@style/menu_labels_style"
+        >
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/action_a"
+            fab:fab_icon="@drawable/abc_ic_commit_search_api_mtrl_alpha"
+            fab:fab_colorNormal="#00b0ff"
+            fab:fab_colorPressed="#40c4ff"
+            fab:fab_title="Add"
+            fab:fab_size="normal">
+        </com.getbase.floatingactionbutton.FloatingActionButton>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/action_b"
+            fab:fab_icon="@drawable/abc_ic_search_api_mtrl_alpha"
+            fab:fab_colorNormal="#0091ea"
+            fab:fab_colorPressed="#40c4ff"
+            fab:fab_title="Here"
+            fab:fab_size="normal">
+        </com.getbase.floatingactionbutton.FloatingActionButton>
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
