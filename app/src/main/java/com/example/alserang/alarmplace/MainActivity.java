@@ -24,6 +24,7 @@ public class MainActivity extends ActionBarActivity {
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         map = mapFragment.getMap();
+        map.getUiSettings().setMyLocationButtonEnabled(true);
         }
 
     public void onClickTest(View view){

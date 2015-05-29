@@ -42,7 +42,7 @@
             fab:fab_icon="@drawable/abc_ic_search_api_mtrl_alpha"
             fab:fab_colorNormal="#0091ea"
             fab:fab_colorPressed="#40c4ff"
-            fab:fab_title="Here"
+            fab:fab_title=""
             fab:fab_size="normal">
         </com.getbase.floatingactionbutton.FloatingActionButton>
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
