@@ -24,11 +24,7 @@ public class MainActivity extends ActionBarActivity {
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         map = mapFragment.getMap();
-        if (map == null){
-            finish();
-            return;
         }
-    }
 
     public void onClickTest(View view){
         map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
