@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements OnMapReadyCallback {
 
     SupportMapFragment mapFragment;
     GoogleMap map;
@@ -20,17 +21,27 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        map = mapFragment.getMap();
-        map.getUiSettings().setMyLocationButtonEnabled(true);
-        }
-
-    public void onClickTest(View view){
-        map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        mapFragment = SupportMapFragment.newInstance();
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.mapContainer, mapFragment)
+                .commit();
+        mapFragment.getMapAsync(this);
     }
 
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        map = googleMap;
+        loadMap(map);
+    }
+
+    public void loadMap(GoogleMap googleMap) {
+        if (googleMap != null) {
+            Toast.makeText(this, "Карта загружена!", Toast.LENGTH_SHORT).show();
+            googleMap.setMyLocationEnabled(true);
+        } else {
+            Toast.makeText(this, "Ошибка загрузки карты!", Toast.LENGTH_SHORT).show();
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -52,7 +63,9 @@ public class MainActivity extends ActionBarActivity {
             startActivity(intent);
             return true;
         }
-
+        if (id == R.id.action_report) {
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

@@ -4,11 +4,10 @@
     android:layout_height="match_parent"
     android:background="@color/background_material_dark">
 
-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/map"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.google.android.gms.maps.MapFragment"/>
+        android:id="@+id/mapContainer"></FrameLayout>
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:layout_width="wrap_content"
